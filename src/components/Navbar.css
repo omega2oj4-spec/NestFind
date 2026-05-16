@@ -1,0 +1,223 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.2rem 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.navbar.scrolled {
+  background: var(--nav-bg);
+  backdrop-filter: blur(10px);
+  padding: 0.8rem 0;
+  box-shadow: var(--shadow);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: white;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  margin-right: 2rem;
+}
+
+.nav-logo span {
+  color: #ff4500;
+}
+
+.navbar.scrolled .nav-logo,
+.navbar.light-page .nav-logo {
+  color: #1a2f3a; /* ✅ Dark when scrolled OR on light pages */
+}
+
+.nav-logo .spa {
+  color: black;
+}
+
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+
+}
+
+.nav-links a,
+.nav-btn {
+  color: white; /* ✅ White by default for contrast */
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.navbar.scrolled .nav-links a,
+.navbar.scrolled .nav-btn,
+.navbar.light-page .nav-links a,
+.navbar.light-page .nav-btn {
+  color: #1a2f3a; /* ✅ Dark when scrolled OR on light pages */
+}
+
+.nav-links a:hover,
+.nav-btn:hover {
+  color: var(--accent);
+}
+
+.fav-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.fav-count {
+  background: var(--accent);
+  color: white;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-weight: 700;
+  min-width: 18px;
+  text-align: center;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.theme-toggle {
+  background: black;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.2s;
+}
+
+.navbar.scrolled .theme-toggle {
+  background: var(--bg-secondary);
+  border-color: var(--border);
+  color: var(--text-primary);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  border-color: var(--accent);
+}
+
+/* Hamburger Menu */
+.nav-cta-btn {
+  background: orangered;
+  color: white !important;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.nav-cta-btn:hover {
+  background: #ff4500;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 69, 0, 0.3);
+}
+
+.navbar.scrolled .nav-cta-btn {
+  box-shadow: 0 4px 12px rgba(255, 69, 0, 0.2);
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 2px;
+  background: orangered;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 992px) {
+  .nav-container {
+    padding: 0 1.5rem;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: #1a1a1a;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2.5rem;
+    transition: all 0.4s ease;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    padding: 2rem;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links a,
+  .nav-btn {
+    font-size: 1.1rem;
+    color: white !important; /* ✅ Overrides all other page-specific colors */
+  }
+
+  .navbar.menu-open .menu-toggle .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .navbar.menu-open .menu-toggle .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navbar.menu-open .menu-toggle .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}

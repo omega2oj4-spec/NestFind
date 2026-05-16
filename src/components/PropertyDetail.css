@@ -1,0 +1,854 @@
+.detail-page {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  padding-bottom: 4rem;
+}
+
+
+
+.detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8rem 2rem 2rem; /* ✅ Increased top padding to clear navbar */
+}
+
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+}
+
+.header-left .detail-location {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.header-left h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0.2rem 0;
+}
+
+.header-left .detail-address {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.header-right {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.price-container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.favorite-toggle {
+  background: white;
+  border: 1px solid var(--border);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.3rem;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow);
+}
+
+.favorite-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.favorite-toggle.active {
+  background: #fff5f5;
+  border-color: #ffc9c9;
+}
+
+.detail-price {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #1e2f3a;
+  margin-bottom: 0.5rem;
+}
+
+.detail-badges {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
+
+.detail-type {
+  display: inline-block;
+  padding: 0.4rem 1.2rem;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: white;
+  color: #1e2f3a;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.detail-type.sale, .detail-type.for-sale {
+  background: #fef9c3;
+  color: #854d0e;
+}
+
+.detail-type.rent, .detail-type.for-rent {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.detail-type.new {
+  background: #1e2f3a;
+  color: white;
+}
+
+.detail-main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2.5rem;
+}
+
+.main-image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 24px;
+}
+
+.image-gallery-slider {
+  margin-bottom: 2.5rem;
+}
+
+.main-image-container {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: all 0.2s;
+  z-index: 10;
+}
+
+.slider-btn:hover {
+  background: white;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.slider-btn.prev { left: 20px; }
+.slider-btn.next { right: 20px; }
+
+.thumbnail-grid {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 0.5rem 0;
+}
+
+.thumbnail {
+  width: 100px;
+  height: 70px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumbnail.active {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.detail-section {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 20px;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.detail-section h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.5rem;
+}
+
+.overview-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.overview-item .label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+
+.overview-item .value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.description-text {
+  line-height: 1.8;
+  color: #475569;
+  font-size: 1rem;
+}
+
+.amenities-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.amenity-tag {
+  background: #f1f5f9;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.map-wrapper {
+  height: 400px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+.detail-map {
+  height: 100%;
+  width: 100%;
+}
+
+/* Sidebar */
+.contact-card {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 100px;
+  border: 1px solid var(--border);
+}
+
+.contact-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #1e293b;
+}
+
+.contact-card p {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-bottom: 1.5rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+.contact-form input, 
+.contact-form textarea {
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--border);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  transition: border-color 0.2s;
+}
+
+.contact-form input:focus, 
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.contact-form textarea {
+  height: 120px;
+  resize: none;
+}
+
+.submit-btn {
+  background: #1e2f3a;
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.submit-btn:hover {
+  background: #0f1a21;
+  transform: translateY(-2px);
+}
+
+.agent-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.agent-avatar {
+  width: 48px;
+  height: 48px;
+  background: #1e2f3a;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.agent-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.agent-name {
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.agent-title {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .detail-main {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 2rem;
+  }
+
+  .detail-container {
+    max-width: 1000px;
+    padding: 0 1.5rem;
+  }
+
+  .header-left h1 {
+    font-size: 2rem;
+  }
+
+  .detail-price {
+    font-size: 1.5rem;
+  }
+
+  .contact-card {
+    top: 80px;
+  }
+}
+
+@media (max-width: 968px) {
+  .detail-main {
+    grid-template-columns: 1fr;
+  }
+  
+  .detail-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .header-right {
+    text-align: left;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .main-image {
+    height: 350px;
+  }
+  
+  .contact-card {
+    position: static;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .detail-page {
+    padding-bottom: 3rem;
+  }
+
+  .detail-nav {
+    padding: 0.75rem 2%;
+  }
+
+  .nav-logo {
+    font-size: 1.2rem;
+  }
+
+  .detail-container {
+    margin: 1.5rem auto;
+    padding: 0 1rem;
+  }
+
+  .detail-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .header-left h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .header-left .detail-address {
+    font-size: 0.9rem;
+  }
+
+  .detail-price {
+    font-size: 1.3rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .detail-type {
+    padding: 0.3rem 1rem;
+    font-size: 0.7rem;
+  }
+
+  .main-image {
+    height: 280px;
+    border-radius: 16px;
+  }
+
+  .detail-section {
+    margin-bottom: 1.5rem;
+  }
+
+  .detail-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  .overview-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .overview-item {
+    padding: 1rem;
+  }
+
+  .overview-item .label {
+    font-size: 0.8rem;
+  }
+
+  .overview-item .value {
+    font-size: 1.1rem;
+  }
+
+  .description-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .amenities-list {
+    gap: 0.6rem;
+  }
+
+  .amenity-tag {
+    padding: 0.5rem 0.9rem;
+    font-size: 0.8rem;
+  }
+
+  .detail-map {
+    height: 300px;
+  }
+
+  .contact-card {
+    padding: 1.5rem;
+  }
+
+  .contact-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .contact-card p {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  .contact-form {
+    gap: 0.6rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.7rem 0.9rem;
+    font-size: 0.9rem;
+  }
+
+  .submit-btn {
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  .agent-info {
+    gap: 0.75rem;
+    padding-top: 1rem;
+  }
+
+  .agent-avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .agent-name {
+    font-size: 0.95rem;
+  }
+
+  .agent-title {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .detail-nav {
+    padding: 0.65rem 1.5%;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: stretch;
+  }
+
+  .back-btn {
+    width: 100%;
+    justify-content: flex-start;
+    font-size: 0.85rem;
+  }
+
+  .nav-logo {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .header-left h1 {
+    font-size: 1.3rem;
+  }
+
+  .detail-location {
+    font-size: 0.75rem;
+  }
+
+  .header-right {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .detail-container {
+    padding: 0 0.75rem;
+    margin: 1rem auto;
+  }
+
+  .main-image {
+    height: 240px;
+  }
+
+  .detail-section h3 {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .overview-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .overview-item {
+    padding: 0.75rem;
+  }
+
+  .overview-item .label {
+    font-size: 0.75rem;
+  }
+
+  .overview-item .value {
+    font-size: 1rem;
+  }
+
+  .description-text {
+    font-size: 0.9rem;
+  }
+
+  .amenities-list {
+    gap: 0.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  }
+
+  .amenity-tag {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.75rem;
+  }
+
+  .detail-map {
+    height: 250px;
+  }
+
+  .map-wrapper {
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .contact-card {
+    padding: 1.2rem;
+    border-radius: 16px;
+  }
+
+  .contact-card h3 {
+    font-size: 1rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.85rem;
+    min-height: 36px;
+  }
+
+  .contact-form textarea {
+    height: 100px;
+  }
+
+  .submit-btn {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+    min-height: 40px;
+  }
+
+  .agent-avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+
+  .agent-name {
+    font-size: 0.9rem;
+  }
+
+  .not-found {
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+
+  .not-found h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .not-found a {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .detail-nav {
+    padding: 0.5rem 1%;
+  }
+
+  .back-btn {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .nav-logo {
+    font-size: 0.9rem;
+  }
+
+  .detail-container {
+    padding: 0 0.5rem;
+    margin: 0.75rem auto;
+  }
+
+  .detail-header {
+    margin-bottom: 1rem;
+  }
+
+  .header-left h1 {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .header-left .detail-address {
+    font-size: 0.8rem;
+  }
+
+  .detail-price {
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .detail-type {
+    padding: 0.25rem 0.8rem;
+    font-size: 0.65rem;
+  }
+
+  .detail-section {
+    margin-bottom: 1.2rem;
+  }
+
+  .detail-section h3 {
+    font-size: 0.95rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .overview-grid {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .overview-item {
+    padding: 0.6rem;
+    background: #f8fafc;
+    border-radius: 8px;
+  }
+
+  .overview-item .label {
+    font-size: 0.7rem;
+  }
+
+  .overview-item .value {
+    font-size: 0.95rem;
+    font-weight: 700;
+  }
+
+  .description-text {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .amenities-list {
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    gap: 0.4rem;
+  }
+
+  .amenity-tag {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.7rem;
+  }
+
+  .detail-map {
+    height: 220px;
+  }
+
+  .contact-card {
+    padding: 1rem;
+  }
+
+  .contact-card h3 {
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .contact-card p {
+    font-size: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .contact-form {
+    gap: 0.5rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.5rem 0.7rem;
+    font-size: 0.8rem;
+    min-height: 32px;
+  }
+
+  .contact-form textarea {
+    height: 80px;
+  }
+
+  .submit-btn {
+    padding: 0.6rem;
+    font-size: 0.85rem;
+    min-height: 36px;
+  }
+
+  .agent-info {
+    gap: 0.6rem;
+    padding-top: 0.8rem;
+  }
+
+  .agent-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 0.8rem;
+  }
+
+  .agent-name {
+    font-size: 0.8rem;
+  }
+
+  .agent-title {
+    font-size: 0.65rem;
+  }
+}

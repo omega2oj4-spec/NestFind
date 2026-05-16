@@ -1,0 +1,207 @@
+.last h5{
+    color: orangered;
+    text-align: center;
+
+}
+.last h1{
+    font-size: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color:white;
+      text-align: center;
+      gap: 10px;
+}
+.last p{
+    font-size: 20px;
+    color:white;
+      text-align: center;
+}
+.last-container {
+    width: 100%;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.prop{
+    background-color: orangered;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 60px;
+    margin-left:240px;
+    
+}
+.props{
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: -60px;
+    margin-left: -130px;
+}
+
+.last {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+@media (max-width: 1024px) {
+  .last h1 {
+    font-size: 40px;
+  }
+
+  .last p {
+    font-size: 18px;
+  }
+
+  .last-container {
+    height: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .last-container {
+    height: 500px;
+    padding: 40px 20px;
+  }
+
+  .last h1 {
+    font-size: 28px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .last p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .prop, .props {
+    padding: 10px 18px;
+    font-size: 14px;
+    margin: 8px 10px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .prop {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .props {
+    margin-top: 0;
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .last-container {
+    height: auto;
+    min-height: 400px;
+    padding: 30px 15px;
+  }
+
+  .last {
+    gap: 15px;
+  }
+
+  .last h5 {
+    font-size: 12px;
+  }
+
+  .last h1 {
+    font-size: 22px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .last p {
+    font-size: 12px;
+  }
+
+  .prop, .props {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 14px;
+    margin: 6px 0;
+  }
+
+  .prop {
+    margin-top: 20px;
+  }
+
+  .props {
+    margin-bottom: 20px;
+  }
+}
+
+.contact-info-grid {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin: 3rem 0;
+  width: 100%;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  min-width: 250px;
+}
+
+.contact-info-item .icon {
+  font-size: 1.5rem;
+}
+
+.contact-info-item h6 {
+  color: orangered;
+  font-size: 0.9rem;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact-info-item p {
+  margin: 0 !important;
+  font-size: 0.95rem;
+  color: white !important;
+  text-align: left !important;
+}
+
+.last-btns {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.prop, .props {
+  margin: 0 !important;
+}
+
+@media (max-width: 992px) {
+  .contact-info-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}

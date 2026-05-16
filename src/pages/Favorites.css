@@ -1,0 +1,203 @@
+.favorites-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.favorites-hero {
+  height: 40vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/pent1.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.favorites-hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.favorites-hero p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.favorites-container {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+  flex: 1;
+  width: 100%;
+}
+
+.no-favorites {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.3;
+}
+
+.no-favorites h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.no-favorites p {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.browse-btn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.browse-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+/* Reuse existing grid styles if possible, but defining some here for safety */
+.properties-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2.5rem;
+}
+
+.property-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border);
+}
+
+.property-card:hover {
+  transform: translateY(-8px);
+}
+
+.card-image-wrapper {
+  position: relative;
+  height: 240px;
+}
+
+.property-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.favorite-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.favorite-btn.active {
+  color: #ff4500;
+}
+
+.price-tag {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  background: var(--accent);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.property-badges {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.listing-type {
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: white;
+}
+
+.listing-type.for-rent { background: #3b82f6; }
+.listing-type.for-sale { background: #10b981; }
+.listing-type.new { background: #f59e0b; }
+
+.card-details {
+  padding: 1.5rem;
+}
+
+.property-location {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.property-name {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.property-features {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.property-address {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+@media (max-width: 768px) {
+  .favorites-hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .properties-grid {
+    grid-template-columns: 1fr;
+  }
+}
