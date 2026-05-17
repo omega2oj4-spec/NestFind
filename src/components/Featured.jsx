@@ -97,7 +97,7 @@ const Featured = () => {
               </button>
 
               <div className="prop-badges">
-                {p.badge.map((b, i) => (
+                {(p.badge || []).map((b, i) => (
                   <span key={i} className={`badge ${b === "NEW" ? "badge-new" : b === "FOR RENT" ? "badge-rent" : "badge-sale"}`}>{b}</span>
                 ))}
               </div>

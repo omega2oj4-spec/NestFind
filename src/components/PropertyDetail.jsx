@@ -105,7 +105,7 @@ const PropertyDetail = () => {
               </button>
             </div>
             <div className="detail-badges">
-              {property.badge.map((b, i) => (
+              {(property.badge || []).map((b, i) => (
                 <div key={i} className={`detail-type ${b.toLowerCase().replace(" ", "-")}`}>
                   {b}
                 </div>

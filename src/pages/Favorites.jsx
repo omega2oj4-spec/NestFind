@@ -59,7 +59,7 @@ const Favorites = () => {
                   
                   <div className="price-tag">{property.price}</div>
                   <div className="property-badges">
-                    {property.badge.map((b, i) => (
+                    {(property.badge || []).map((b, i) => (
                       <div key={i} className={`listing-type ${b.toLowerCase().replace(" ", "-")}`}>
                         {b}
                       </div>

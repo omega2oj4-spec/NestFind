@@ -46,6 +46,7 @@ const properties = [
     id: 3,
     image: u('1502005229762-cf1b2da7c5d6'),
     images: [u('1502005229762-cf1b2da7c5d6'), u('1484154218962-a197022b5858'), u('1560184897-ae75f418493e')],
+    badge: ["FOR SALE"],
     price: "₦95,000,000",
     priceNum: 95000000,
     type: "sale",
