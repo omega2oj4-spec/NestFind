@@ -15,6 +15,11 @@ const Featured = () => {
   const navigate = useNavigate();
   const scrollRef = useRef(null);
   const { favorites, toggleFavorite } = useFavorites();
+  const fallbackHouse = "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80";
+  const handleImageError = (e) => {
+    e.currentTarget.onerror = null;
+    e.currentTarget.src = fallbackHouse;
+  };
 
   const handleToggleFavorite = (e, id) => {
     e.stopPropagation();
@@ -81,7 +86,7 @@ const Featured = () => {
         {properties.slice(0, 12).map((p) => (
           <div className="prop-card" key={p.id} onClick={() => navigate(`/property/${p.id}`)}>
             <div className="prop-img-wrap">
-              <img src={p.image} alt={p.name} className="prop-img" />
+              <img src={p.image} alt={p.name} className="prop-img" onError={handleImageError} />
               
               <button 
                 className={`favorite-btn ${favorites.includes(p.id) ? 'active' : ''}`}

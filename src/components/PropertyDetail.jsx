@@ -39,6 +39,12 @@ const PropertyDetail = () => {
     return min.toISOString().split("T")[0];
   })();
 
+  const fallbackHouse = "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80";
+  const handleImageError = (e) => {
+    e.currentTarget.onerror = null;
+    e.currentTarget.src = fallbackHouse;
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -112,7 +118,7 @@ const PropertyDetail = () => {
           <div className="main-content">
             <div className="image-gallery-slider">
               <div className="main-image-container">
-                <img src={property.images[activeImage]} alt={property.name} className="main-image" />
+                <img src={property.images[activeImage]} alt={property.name} className="main-image" onError={handleImageError} />
                 <button className="slider-btn prev" onClick={prevImage}>‹</button>
                 <button className="slider-btn next" onClick={nextImage}>›</button>
               </div>
@@ -123,7 +129,7 @@ const PropertyDetail = () => {
                     className={`thumbnail ${index === activeImage ? 'active' : ''}`}
                     onClick={() => setActiveImage(index)}
                   >
-                    <img src={img} alt={`Thumbnail ${index}`} />
+                    <img src={img} alt={`Thumbnail ${index}`} onError={handleImageError} />
                   </div>
                 ))}
               </div>

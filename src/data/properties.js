@@ -1,17 +1,11 @@
-import lekkiApt from "../assets/lekki_apt.png";
-import nycPent from "../assets/nyc_pent.png";
-import miamiVilla from "../assets/miami_villa.png";
-import pentImg from "../assets/pent.jpg";
-import pentImg1 from "../assets/pent1.jpg";
-
-// Reliable Unsplash URL helper
-const u = (id) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=1200`;
+// Reliable Unsplash URL helper for house images
+const u = (id) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=1200&q=80`;
 
 const properties = [
   {
     id: 1,
-    image: lekkiApt,
-    images: [lekkiApt, u('1600607687940-47a04b929753'), u('1600566753190-17f0bcd2a6c4')],
+    image: u('1600607687940-47a04b929753'),
+    images: [u('1600607687940-47a04b929753'), u('1600566753190-17f0bcd2a6c4'), u('1512917774080-9991f1c4c750')],
     badge: ["FOR RENT", "NEW"],
     price: "₦12,500,000/yr",
     priceNum: 12500000,
@@ -30,8 +24,8 @@ const properties = [
   },
   {
     id: 2,
-    image: nycPent,
-    images: [nycPent, u('1600047509807-ba8f99d2cdde'), u('1600607687644-c7171b42398b')],
+    image: u('1600047509807-ba8f99d2cdde'),
+    images: [u('1600047509807-ba8f99d2cdde'), u('1600607687644-c7171b42398b'), u('1505691938895-1758d7eaa511')],
     badge: ["FOR SALE", "NEW"],
     price: "₦185,000,000",
     priceNum: 185000000,
@@ -50,9 +44,8 @@ const properties = [
   },
   {
     id: 3,
-    image: miamiVilla,
-    images: [miamiVilla, u('1502005229762-cf1b2da7c5d6'), u('1484154218962-a197022b5858')],
-    badge: ["FOR SALE", "NEW"],
+    image: u('1502005229762-cf1b2da7c5d6'),
+    images: [u('1502005229762-cf1b2da7c5d6'), u('1484154218962-a197022b5858'), u('1560184897-ae75f418493e')],
     price: "₦95,000,000",
     priceNum: 95000000,
     type: "sale",

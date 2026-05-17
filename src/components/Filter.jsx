@@ -19,6 +19,11 @@ const Filter = () => {
   const navigate = useNavigate();
   const locationState = useLocation();
   const { favorites, toggleFavorite } = useFavorites();
+  const fallbackHouse = "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80";
+  const handleImageError = (e) => {
+    e.currentTarget.onerror = null;
+    e.currentTarget.src = fallbackHouse;
+  };
   const [filter, setFilter] = useState("all");
   const [showFilters, setShowFilters] = useState(false);
   const [view, setView] = useState("grid"); // "grid" or "map"
@@ -258,7 +263,7 @@ const Filter = () => {
                   onClick={() => navigate(`/property/${property.id}`)}
                 >
                   <div className="card-image-wrapper">
-                    <img src={property.image} alt={property.name} className="property-img" />
+                    <img src={property.image} alt={property.name} className="property-img" onError={handleImageError} />
                     
                     <button 
                       className={`favorite-btn ${favorites.includes(property.id) ? 'active' : ''}`}
@@ -308,7 +313,7 @@ const Filter = () => {
                 <Marker key={property.id} position={[property.lat, property.lng]}>
                   <Popup>
                     <div className="map-popup">
-                      <img src={property.image} alt={property.name} />
+                      <img src={property.image} alt={property.name} onError={handleImageError} />
                       <h4>{property.name}</h4>
                       <p>{property.price}</p>
                       <Link to={`/property/${property.id}`}>View Details</Link>
