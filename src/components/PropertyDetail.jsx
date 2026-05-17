@@ -22,10 +22,42 @@ const PropertyDetail = () => {
   const { isFavorite, toggleFavorite } = useFavorites();
   const property = properties.find((p) => p.id === parseInt(id));
   const [activeImage, setActiveImage] = React.useState(0);
+  const tourTypes = ["Virtual Tour", "In-Person Tour", "Open House Tour"];
+  const availableTimes = ["9:00 AM", "11:00 AM", "1:00 PM", "3:00 PM", "5:00 PM"];
+  const [tourType, setTourType] = React.useState(tourTypes[0]);
+  const [selectedDate, setSelectedDate] = React.useState(() => {
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    return tomorrow.toISOString().split("T")[0];
+  });
+  const [selectedTime, setSelectedTime] = React.useState("");
+  const [confirmation, setConfirmation] = React.useState(null);
+  const [showConfirmation, setShowConfirmation] = React.useState(false);
+  const minBookingDate = (() => {
+    const min = new Date();
+    min.setDate(min.getDate() + 1);
+    return min.toISOString().split("T")[0];
+  })();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const handleTourConfirm = () => {
+    if (!selectedTime) return;
+    setConfirmation({
+      tourType,
+      date: selectedDate,
+      time: selectedTime,
+      propertyName: property.name,
+      propertyAddress: property.address,
+    });
+    setShowConfirmation(true);
+  };
+
+  const closeConfirmation = () => {
+    setShowConfirmation(false);
+  };
 
   if (!property) {
     return (
@@ -157,6 +189,62 @@ const PropertyDetail = () => {
           </div>
 
           <aside className="detail-sidebar">
+            <div className="booking-card">
+              <h3>Book a Tour</h3>
+              <p>Choose a tour type, date, and time. We’ll confirm your appointment instantly.</p>
+              <div className="booking-field">
+                <label>Tour Type</label>
+                <div className="tour-type-grid">
+                  {tourTypes.map((type) => (
+                    <button
+                      key={type}
+                      type="button"
+                      className={`tour-type-pill ${tourType === type ? 'active' : ''}`}
+                      onClick={() => setTourType(type)}
+                    >
+                      {type}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="booking-field">
+                <label htmlFor="tour-date">Date</label>
+                <input
+                  id="tour-date"
+                  type="date"
+                  min={minBookingDate}
+                  value={selectedDate}
+                  onChange={(e) => setSelectedDate(e.target.value)}
+                />
+              </div>
+
+              <div className="booking-field">
+                <label>Time</label>
+                <div className="time-grid">
+                  {availableTimes.map((time) => (
+                    <button
+                      key={time}
+                      type="button"
+                      className={`time-pill ${selectedTime === time ? 'selected' : ''}`}
+                      onClick={() => setSelectedTime(time)}
+                    >
+                      {time}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <button
+                type="button"
+                className="confirm-tour-btn"
+                onClick={handleTourConfirm}
+                disabled={!selectedTime}
+              >
+                Confirm Tour
+              </button>
+            </div>
+
             <div className="contact-card">
               <h3>Interested in this property?</h3>
               <p>Schedule a private tour or request more information.</p>
@@ -178,6 +266,36 @@ const PropertyDetail = () => {
           </aside>
         </div>
       </div>
+
+      {showConfirmation && confirmation && (
+        <div className="confirmation-overlay" role="dialog" aria-modal="true" aria-labelledby="confirmation-title">
+          <div className="confirmation-card">
+            <button className="close-modal" onClick={closeConfirmation} aria-label="Close confirmation">×</button>
+            <span className="success-badge">Confirmed</span>
+            <h3 id="confirmation-title">Tour Scheduled</h3>
+            <p className="confirmation-copy">
+              Your {confirmation.tourType.toLowerCase()} has been booked for <strong>{new Date(confirmation.date).toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' })}</strong> at <strong>{confirmation.time}</strong>.
+            </p>
+            <div className="confirmation-details">
+              <div>
+                <span>Property</span>
+                <strong>{confirmation.propertyName}</strong>
+              </div>
+              <div>
+                <span>Address</span>
+                <strong>{confirmation.propertyAddress}</strong>
+              </div>
+              <div>
+                <span>Tour Type</span>
+                <strong>{confirmation.tourType}</strong>
+              </div>
+            </div>
+            <button type="button" className="confirm-tour-btn" onClick={closeConfirmation}>
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

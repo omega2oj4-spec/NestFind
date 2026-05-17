@@ -46,6 +46,7 @@ const Navbar = () => {
     }
   };
 
+
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""} ${isLightPage ? "light-page" : ""} ${menuOpen ? "menu-open" : ""}`}>
       <div className="nav-container">
@@ -76,3 +77,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

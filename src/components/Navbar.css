@@ -107,31 +107,6 @@
   gap: 1rem;
 }
 
-.theme-toggle {
-  background: black;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: white;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-size: 1.2rem;
-  transition: all 0.2s;
-}
-
-.navbar.scrolled .theme-toggle {
-  background: var(--bg-secondary);
-  border-color: var(--border);
-  color: var(--text-primary);
-}
-
-.theme-toggle:hover {
-  transform: scale(1.1);
-  border-color: var(--accent);
-}
 
 /* Hamburger Menu */
 .nav-cta-btn {

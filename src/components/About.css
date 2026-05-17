@@ -4,9 +4,7 @@
   align-items: center;
   gap: 40px;
   padding: 60px 48px;
-  
-   padding: 60px 48px;
-  background: #f8f6f2;
+  background: var(--bg-secondary);
 }
 
 
@@ -30,8 +28,7 @@ h5 {
 }
 
 .about-text p{
-  color: black;
-  
+  color: var(--text-primary);
   font-size: 30px;
   line-height: 1.8;
 }
@@ -61,20 +58,20 @@ h5 {
 .about-stat h2 {
   font-size: 42px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--text-primary);
   margin-bottom: 8px;
 }
 
 .about-stat h5 {
   font-size: 15px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--text-primary);
   margin-bottom: 16px;
 }
 
 .about-stat p {
   font-size: 13px;
-  color: #666;
+  color: var(--text-secondary);
   line-height: 1.7;
   font-family: inherit;
 }
