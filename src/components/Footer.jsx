@@ -40,7 +40,7 @@ function Footer() {
         <div className="footer-bottom">
           <p>+1(555)123-567.</p>
           <p>NestFind@gmail.com.</p>
-          <p>&copy; Establishment All reserved.</p>
+          <p>&copy; Establishment All reserved. Project done by OLADIPO TAIWO.</p>
         </div>
       </div>
     </div>
