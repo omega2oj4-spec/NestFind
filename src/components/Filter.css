@@ -212,7 +212,8 @@
 .favorite-btn {
   position: absolute;
   top: 12px;
-  left: 12px;
+  right: 12px; /* ✅ Move heart to the right side */
+  left: auto;  /* ✅ Clear leftover left positions */
   background: rgba(255, 255, 255, 0.9);
   border: none;
   width: 36px;
@@ -252,11 +253,12 @@
 .property-badges {
   position: absolute;
   top: 12px;
-  right: 12px;
+  left: 12px;  /* ✅ Move badges to the left side */
+  right: auto; /* ✅ Clear leftover right positions */
   display: flex;
   flex-direction: column;
   gap: 6px;
-  align-items: flex-end;
+  align-items: flex-start; /* ✅ Align badges nicely to the left */
 }
 
 .listing-type {
