@@ -48,8 +48,10 @@ const Home = () => {
           <p className="hero-description">Experience curated living and architectural excellence tailored to your exact lifestyle and aspirations.</p>
 
           <div className="container">
-            <button className="b">Buy</button>
-            <button className="bu">Rent</button>
+            <div className="tab-group">
+              <button className="b">Buy</button>
+              <button className="bu">Rent</button>
+            </div>
             <form onSubmit={handleSearch}>
               <select className="input" value={location} onChange={e => setLocation(e.target.value)}>
                 <option value="all">City or neighbourhood</option>
