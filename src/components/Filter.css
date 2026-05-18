@@ -345,6 +345,8 @@
 
 /* Map View */
 .map-view-container {
+  position: relative; /* ✅ Keep map zoom buttons locked inside the map boundary */
+  z-index: 1;         /* ✅ Keep underneath fixed navbar dropdowns */
   height: calc(100vh - 250px);
   border-radius: 20px;
   overflow: hidden;
