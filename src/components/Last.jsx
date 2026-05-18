@@ -1,10 +1,9 @@
 import React from "react";
 import "./Last.css";
-import heroBg from '../assets/pent.jpg';
 
 const Last = () => {
   return (
-    <div style={{ backgroundImage: `url(${heroBg})`, backgroundSize: 'cover', backgroundPosition: 'center' }} className="last-container">
+    <div style={{ backgroundImage: `url('https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MzAyNTkxMjE=/original/7e346b07-814a-47bc-96e2-6cbae9f8a71f.jpeg')`, backgroundSize: 'cover', backgroundPosition: 'center' }} className="last-container">
       <div className="last">
         <h5>Ready to Begin</h5>
         <h1>Let's Find Your Perfect <br /> Property Together</h1>
