@@ -33,6 +33,13 @@ const PropertyDetail = () => {
   const [selectedTime, setSelectedTime] = React.useState("");
   const [confirmation, setConfirmation] = React.useState(null);
   const [showConfirmation, setShowConfirmation] = React.useState(false);
+  const [messageSent, setMessageSent] = React.useState(false);
+
+  const handleSendMessage = (e) => {
+    e.preventDefault();
+    setMessageSent(true);
+  };
+
   const minBookingDate = (() => {
     const min = new Date();
     min.setDate(min.getDate() + 1);
@@ -254,13 +261,21 @@ const PropertyDetail = () => {
             <div className="contact-card">
               <h3>Interested in this property?</h3>
               <p>Schedule a private tour or request more information.</p>
-              <form className="contact-form">
-                <input type="text" placeholder="Your Name" required />
-                <input type="email" placeholder="Email Address" required />
-                <input type="tel" placeholder="Phone Number" />
-                <textarea placeholder="I'm interested in this property..."></textarea>
-                <button type="submit" className="submit-btn">SEND MESSAGE</button>
-              </form>
+              {messageSent ? (
+                <div className="contact-success-message">
+                  <div className="success-icon">✓</div>
+                  <h4>Message sent successfully!</h4>
+                  <p>Our senior real estate agent, Oladipo Taiwo, will contact you shortly.</p>
+                </div>
+              ) : (
+                <form className="contact-form" onSubmit={handleSendMessage}>
+                  <input type="text" placeholder="Your Name" required />
+                  <input type="email" placeholder="Email Address" required />
+                  <input type="tel" placeholder="Phone Number" />
+                  <textarea placeholder="I'm interested in this property..." required></textarea>
+                  <button type="submit" className="submit-btn">SEND MESSAGE</button>
+                </form>
+              )}
               <div className="agent-info">
                 <div className="agent-avatar">OT</div>
                 <div className="agent-text">

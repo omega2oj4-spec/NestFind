@@ -526,6 +526,57 @@
   transform: translateY(-2px);
 }
 
+/* Contact Message Sent Success Feedback Panel */
+.contact-success-message {
+  text-align: center;
+  padding: 2rem 1.25rem;
+  background: rgba(34, 197, 94, 0.06);
+  border: 1px dashed rgba(34, 197, 94, 0.35);
+  border-radius: 16px;
+  margin-bottom: 1.5rem;
+  animation: scaleUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.93);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.contact-success-message .success-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: #22c55e;
+  color: white;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.25);
+}
+
+.contact-success-message h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #15803d;
+  margin-bottom: 0.4rem;
+}
+
+.contact-success-message p {
+  font-size: 0.85rem !important;
+  color: #166534 !important;
+  line-height: 1.5;
+  margin: 0 !important;
+}
+
 .agent-info {
   display: flex;
   align-items: center;
