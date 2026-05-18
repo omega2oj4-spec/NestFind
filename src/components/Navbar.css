@@ -87,6 +87,7 @@
 .fav-nav-link {
   display: flex;
   align-items: center;
+  justify-content: center; /* ✅ Centers text and counter badge perfectly */
   gap: 0.5rem;
 }
 
@@ -134,6 +135,7 @@
 .nav-overlay {
   position: fixed;
   inset: 0;
+  height: 100dvh; /* ✅ Force full dynamic viewport height */
   background: rgba(11, 15, 25, 0.5);
   backdrop-filter: blur(4px);
   z-index: 1000; /* Behind the active sliding drawer (1001) but above page content */
@@ -184,6 +186,7 @@
     right: -100%;
     width: 280px;
     height: 100vh;
+    height: 100dvh; /* ✅ Force full dynamic viewport height on mobile drawer */
     background: rgba(11, 15, 25, 0.98);
     backdrop-filter: blur(15px);
     flex-direction: column;
