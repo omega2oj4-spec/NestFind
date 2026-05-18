@@ -54,7 +54,8 @@ const PropertyDetail = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+    setMessageSent(false);
+  }, [id]);
 
   const handleTourConfirm = () => {
     if (!selectedTime) return;
