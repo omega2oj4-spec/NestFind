@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Home.css";
-import heroBg from '../assets/bgcolor.jpg';
+import heroBg from '../assets/https://images.adsttc.com/media/images/5dba/e07f/3312/fd14/3300/0d85/large_jpg/stella.jpg?1572528246';
 import Navbar from "./Navbar";
 import { useNavigate } from "react-router-dom";
 
