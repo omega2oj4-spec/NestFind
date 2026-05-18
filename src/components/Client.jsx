@@ -94,6 +94,18 @@ const Client = () => {
           <hr />
           <p className="pp">"I've worked with real estate agents across three cities and NestFind has the best of the best. I find true peace when I'm in any of their managed properties."</p>
         </div>
+        <div className="card">
+          <div className="client-profile">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80" alt="Elizabeth Keen" className="client-img" />
+            <div className="client-info">
+              <h2>Elizabeth Keen</h2>
+              <p className="client-sub">Purchased: The Horizon Estate</p>
+            </div>
+          </div>
+          <StarRating rating={5} onRate={() => {}} locked={true} />
+          <hr />
+          <p className="pp">"The seamless search process and outstanding customer support made buying our first investment property a complete breeze. We couldn't be happier with the NestFind team!"</p>
+        </div>
       </div>
     </div>
   );
