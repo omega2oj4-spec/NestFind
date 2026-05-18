@@ -268,6 +268,8 @@
 }
 
 .map-wrapper {
+  position: relative; /* ✅ Keep map zoom buttons locked inside the map boundary */
+  z-index: 1;         /* ✅ Keep underneath fixed navbar dropdowns */
   height: 400px;
   border-radius: 16px;
   overflow: hidden;
