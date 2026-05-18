@@ -1,7 +1,10 @@
 /* Footer Styling */
 
 .footer {
-  background: #0b0f19;
+  background: linear-gradient(rgba(11, 15, 25, 0.9), rgba(11, 15, 25, 0.94)), url('https://cdn.villapaketi.com/uploads/iMG_8563-Edit_233.JPG');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: white;
   margin-top: 6rem;
   padding: 5rem 0 2.5rem;
