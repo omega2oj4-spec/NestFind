@@ -2,7 +2,7 @@ import React from "react";
 import "./Properties.css";
 import Filter from "./Filter";
 import Navbar from "./Navbar";
-const heroBg = "https://avatars.mds.yandex.net/i?id=1f26b6714ddc8074b38e74d9f0ab317496ad6966-5221937-images-thumbs&n=13";
+const heroBg = "https://i.ytimg.com/vi/w0cXt-dgy3k/maxresdefault.jpg";
 
 const Properties = () => {
   return (
