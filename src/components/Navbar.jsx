@@ -48,31 +48,34 @@ const Navbar = () => {
 
 
   return (
-    <nav className={`navbar ${scrolled ? "scrolled" : ""} ${isLightPage ? "light-page" : ""} ${menuOpen ? "menu-open" : ""}`}>
-      <div className="nav-container">
-        <Link to="/" className="nav-logo" onClick={handleHomeClick}>
-          Nest<span>Find</span>
-        </Link>
-
-        <div className={`nav-links ${menuOpen ? "active" : ""}`}>
-          <Link to="/" onClick={handleHomeClick}>Home</Link>
-          <Link to="/properties" onClick={() => setMenuOpen(false)}>Properties</Link>
-          <Link to="/favorites" onClick={() => setMenuOpen(false)} className="fav-nav-link">
-            Favorites {favorites.length > 0 && <span className="fav-count">{favorites.length}</span>}
+    <>
+      {menuOpen && <div className="nav-overlay" onClick={() => setMenuOpen(false)} />}
+      <nav className={`navbar ${scrolled ? "scrolled" : ""} ${isLightPage ? "light-page" : ""} ${menuOpen ? "menu-open" : ""}`}>
+        <div className="nav-container">
+          <Link to="/" className="nav-logo" onClick={handleHomeClick}>
+            Nest<span>Find</span>
           </Link>
-          <button onClick={() => scrollToSection("about")} className="nav-btn">About</button>
-          <button onClick={() => scrollToSection("contact")} className="nav-cta-btn">Get in Touch</button>
-        </div>
 
-        <div className="nav-actions">
-          <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
-            <span className="bar"></span>
-            <span className="bar"></span>
-            <span className="bar"></span>
-          </button>
+          <div className={`nav-links ${menuOpen ? "active" : ""}`}>
+            <Link to="/" onClick={handleHomeClick}>Home</Link>
+            <Link to="/properties" onClick={() => setMenuOpen(false)}>Properties</Link>
+            <Link to="/favorites" onClick={() => setMenuOpen(false)} className="fav-nav-link">
+              Favorites {favorites.length > 0 && <span className="fav-count">{favorites.length}</span>}
+            </Link>
+            <button onClick={() => scrollToSection("about")} className="nav-btn">About</button>
+            <button onClick={() => scrollToSection("contact")} className="nav-cta-btn">Get in Touch</button>
+          </div>
+
+          <div className="nav-actions">
+            <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+              <span className="bar"></span>
+              <span className="bar"></span>
+              <span className="bar"></span>
+            </button>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </>
   );
 };
 

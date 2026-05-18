@@ -43,10 +43,9 @@ const Home = () => {
         />
         <div className="home-hero-overlay" />
         <div className="hero-content">
-          <h1>Find Your <span><br />Dream</span> Home</h1>
-          <p>Discover the finest properties across prime locations.</p>
-          <p>These should help convey a sense of aspiration and possibility <br />
-            which are often associated with the real estate market.</p>
+          <h1>Find Your <span>Dream</span> Home</h1>
+          <p className="hero-subtitle">Discover the finest luxury properties across prime locations.</p>
+          <p className="hero-description">Experience curated living and architectural excellence tailored to your exact lifestyle and aspirations.</p>
 
           <div className="container">
             <button className="b">Buy</button>

@@ -58,30 +58,42 @@ const Client = () => {
         who've trusted us with their most important decisions
       </p>
       <div className="client-container">
-      <div className="card">
-        <img src={clientImg} alt="client" className="client-img" />
-        <h2>Ahmed Ololade</h2>
-        <p>Purchased: Casa SerenaVilla</p>
-        <StarRating rating={rating} onRate={handleRate} locked={locked} />
-        <hr />
-        <p className="pp">"working with NestFind team <br /> was an exceptional experience from beginning to the end. <br /> They understood exactly what we were looking for and found us a home"</p>
-      </div>
-      <div className="card">
-        <img src={clientImg1} alt="client" className="client-img" />
-        <h2>Daniel Mercer</h2>
-        <p>Purchased: The merdian penthouse</p>
-        <StarRating rating={rating} onRate={handleRate} locked={locked} />
-        <hr />
-        <p className="pp">"The peofessionalism and market knowledge demonstrated throughtout our purchase process was unmatched.Highly recommended to anyone looking for a real estate"</p>
-      </div>
-      <div className="card">
-        <img src={clientImg2} alt="client" className="client-img" />
-        <h2>Raymond Reddington</h2>
-        <p>Rented in LA</p>
-        <StarRating rating={rating} onRate={handleRate} locked={locked} />
-        <hr />
-        <p className="pp">"I've worked with real estate agents across three cities and Nestfind has the best of the best I find peace when i'm in any of their houses"</p>
-      </div>
+        <div className="card">
+          <div className="client-profile">
+            <img src={clientImg} alt="Ahmed Ololade" className="client-img" />
+            <div className="client-info">
+              <h2>Ahmed Ololade</h2>
+              <p className="client-sub">Purchased: Casa Serena Villa</p>
+            </div>
+          </div>
+          <StarRating rating={rating} onRate={handleRate} locked={locked} />
+          <hr />
+          <p className="pp">"Working with the NestFind team was an exceptional experience from beginning to end. They understood exactly what we were looking for and found us our dream home."</p>
+        </div>
+        <div className="card">
+          <div className="client-profile">
+            <img src={clientImg1} alt="Daniel Mercer" className="client-img" />
+            <div className="client-info">
+              <h2>Daniel Mercer</h2>
+              <p className="client-sub">Purchased: The Meridian Penthouse</p>
+            </div>
+          </div>
+          <StarRating rating={rating} onRate={handleRate} locked={locked} />
+          <hr />
+          <p className="pp">"The professionalism and market knowledge demonstrated throughout our purchase process was unmatched. Highly recommended to anyone looking for a luxury home."</p>
+        </div>
+        <div className="card">
+          <div className="client-profile">
+            <img src={clientImg2} alt="Raymond Reddington" className="client-img" />
+            <div className="client-info">
+              <h2>Raymond Reddington</h2>
+              <p className="client-sub">Rented in LA</p>
+            </div>
+          </div>
+          <StarRating rating={rating} onRate={handleRate} locked={locked} />
+          <hr />
+          <p className="pp">"I've worked with real estate agents across three cities and NestFind has the best of the best. I find true peace when I'm in any of their managed properties."</p>
+        </div>
       </div>
     </div>
   );

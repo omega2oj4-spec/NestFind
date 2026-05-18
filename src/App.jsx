@@ -12,11 +12,13 @@ import Filter from "./components/Filter";
 import PropertyDetail from "./components/PropertyDetail";
 import Favorites from "./pages/Favorites";
 import { FavoritesProvider } from "./context/FavoritesContext";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <FavoritesProvider>
       <div className="App">
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={
             <>

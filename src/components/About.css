@@ -1,142 +1,189 @@
+/* About Section Styling */
+
 .about {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
   align-items: center;
-  gap: 40px;
-  padding: 60px 48px;
+  gap: 4rem;
+  padding: 6rem 4rem;
   background: var(--bg-secondary);
+  max-width: 1400px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
-
 .about-img {
-  width: 25%;
-  height: 30%;
+  width: 100%;
+  height: 480px;
   object-fit: cover;
-  border-radius: 8px;
-  flex-shrink: 0;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
 }
 
 .about-text {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-top: -80px;
+  gap: 1.5rem;
+  text-align: left;
 }
 
-h5 {
-  color: orangered;
+.about-text h5 {
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin: 0;
 }
 
-.about-text p{
+.about-text p {
   color: var(--text-primary);
-  font-size: 30px;
-  line-height: 1.8;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.6;
+  margin: 0;
 }
-.bell{
+
+.bell {
   color: white;
-  background-color: orangered;
-  width: 140px;
-  height: 45px;
-  border-radius: 5px;
+  background-color: var(--accent);
+  width: auto;
+  align-self: flex-start;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 69, 0, 0.2);
 }
 
-
-.about-img {
-  width: 280px;
-  height: 260px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 48px;
+.bell:hover {
+  background-color: #e03d00;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 69, 0, 0.3);
 }
 
 .about-stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 32px;
+  gap: 2rem;
+  margin-top: 2rem;
+  border-top: 1px solid var(--border);
+  padding-top: 2rem;
+}
+
+.about-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .about-stat h2 {
-  font-size: 42px;
-  font-weight: 700;
+  font-size: 2.2rem;
+  font-weight: 800;
   color: var(--text-primary);
-  margin-bottom: 8px;
+  margin: 0;
 }
 
 .about-stat h5 {
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 16px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
 }
 
 .about-stat p {
-  font-size: 13px;
+  font-size: 0.85rem;
   color: var(--text-secondary);
-  line-height: 1.7;
-  font-family: inherit;
+  line-height: 1.6;
+  font-weight: 400;
+  margin: 0;
 }
 
-@media (max-width: 768px) {
+/* 📱 Responsive Adjustments */
+@media (max-width: 1200px) {
   .about {
-    flex-direction: column;
-    padding: 30px 20px;
-    gap: 30px;
+    gap: 3rem;
+    padding: 5rem 2.5rem;
   }
 
   .about-img {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-  }
-
-  .about-text {
-    margin-top: 0;
-    gap: 15px;
+    height: 420px;
   }
 
   .about-text p {
-    font-size: 16px;
-  }
-
-  .about-stats {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    font-size: 1.5rem;
   }
 
   .about-stat h2 {
-    font-size: 28px;
-  }
-
-  .bell {
-    width: 100%;
-    max-width: 140px;
+    font-size: 1.8rem;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 992px) {
   .about {
-    padding: 20px 15px;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 4rem 2rem;
+  }
+
+  .about-img {
+    height: 380px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .about-text {
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-text h5 {
+    align-self: center;
+  }
+
+  .bell {
+    align-self: center;
+  }
+
+  .about-stats {
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .about-stat {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .about {
+    padding: 3rem 1.25rem;
+    gap: 2rem;
+  }
+
+  .about-img {
+    height: 280px;
   }
 
   .about-text p {
-    font-size: 14px;
-    line-height: 1.6;
+    font-size: 1.25rem;
+    line-height: 1.5;
   }
 
   .about-stats {
     grid-template-columns: 1fr;
-    gap: 15px;
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
   }
 
   .about-stat h2 {
-    font-size: 24px;
-  }
-
-  .about-stat h5 {
-    font-size: 14px;
-  }
-
-  .about-stat p {
-    font-size: 12px;
+    font-size: 1.6rem;
   }
 }
