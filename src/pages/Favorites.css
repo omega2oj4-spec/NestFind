@@ -5,7 +5,7 @@
 }
 
 .favorites-hero {
-  height: 100vh;
+  height: 50vh; /* ✅ Balanced height, reduced from 100vh */
   background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('https://i.pinimg.com/originals/34/f2/cf/34f2cf9b8216c7a18ac04acf50ccdde7.jpg');
   background-size: cover;
   background-position: center;
@@ -86,7 +86,7 @@
 /* Reuse existing grid styles if possible, but defining some here for safety */
 .properties-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); /* ✅ Enlarged grid cards */
   gap: 2.5rem;
 }
 
@@ -106,7 +106,7 @@
 
 .card-image-wrapper {
   position: relative;
-  height: 240px;
+  height: 300px; /* ✅ Enlarged property card image area */
 }
 
 .property-img {
@@ -215,7 +215,7 @@
 
 @media (max-width: 480px) {
   .favorites-hero {
-    height: 100vh;
+    height: 40vh; /* ✅ Balanced mobile hero height */
   }
 
   .favorites-hero h1 {

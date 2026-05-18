@@ -169,7 +169,7 @@
 /* Properties Grid */
 .properties-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); /* ✅ Enlarged catalog card grid columns */
   gap: 1.5rem;
 }
 
@@ -194,7 +194,7 @@
 
 .card-image-wrapper {
   position: relative;
-  height: 240px;
+  height: 300px; /* ✅ Enlarged property card image area */
   overflow: hidden;
 }
 
