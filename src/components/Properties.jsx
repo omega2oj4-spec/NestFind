@@ -2,7 +2,8 @@ import React from "react";
 import "./Properties.css";
 import Filter from "./Filter";
 import Navbar from "./Navbar";
-const heroBg = "https://i.ytimg.com/vi/w0cXt-dgy3k/maxresdefault.jpg";
+
+const heroBg = "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1600";
 
 const Properties = () => {
   return (
